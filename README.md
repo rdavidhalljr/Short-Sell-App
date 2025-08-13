@@ -1,6 +1,10 @@
 
 # Shorting Webapp (Next.js + Vercel Postgres)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A//github.com/your-username/shorting-webapp&project-name=shorting-webapp&repository-name=shorting-webapp&env=ALPHA_VANTAGE_KEY%2CPOSTGRES_URL%2CPOSTGRES_URL_NON_POOLING%2CPOSTGRES_USER%2CPOSTGRES_PASSWORD%2CPOSTGRES_HOST%2CPOSTGRES_DATABASE&envDescription=Set%20your%20Alpha%20Vantage%20key%20and%20Vercel%20Postgres%20credentials%20%28auto-provision%20via%20integration%29.&envLink=https%3A//github.com/your-username/shorting-webapp%23environment-variables)
+
+
+
 Paper trading short recommendations blending technical indicators with a tiny online logistic regression model.
 
 ## One‑click Deploy (Vercel)
@@ -37,3 +41,18 @@ npm run init:db
 - Position sizing: naive 1% equity risk with 1×ATR stop.
 - Model: logistic regression with SGD; parameters stored in `models` table as JSON.
 - This is **not** financial advice. For research/paper‑trading only.
+
+
+## Environment Variables
+
+Required (set in Vercel → Project → Settings → Environment Variables):
+
+- `ALPHA_VANTAGE_KEY`
+- `POSTGRES_URL`
+- `POSTGRES_URL_NON_POOLING`
+- `POSTGRES_USER`
+- `POSTGRES_PASSWORD`
+- `POSTGRES_HOST`
+- `POSTGRES_DATABASE`
+
+The database schema is created automatically on the first request to any API route.

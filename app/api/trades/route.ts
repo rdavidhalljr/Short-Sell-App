@@ -1,5 +1,6 @@
 
 import { NextResponse } from 'next/server';
+import { withBootstrap } from '@/lib/bootstrap';
 import { listTrades, createTrade } from '@/lib/db';
 
 export async function GET() {
@@ -9,7 +10,7 @@ export async function GET() {
   } catch (e: any) {
     return new NextResponse(e.message, { status: 500 });
   }
-}
+  ); }
 
 export async function POST(req: Request) {
   try {
@@ -25,4 +26,4 @@ export async function POST(req: Request) {
   } catch (e: any) {
     return new NextResponse(e.message, { status: 500 });
   }
-}
+  ); }

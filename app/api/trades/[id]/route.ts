@@ -1,5 +1,6 @@
 
 import { NextResponse } from 'next/server';
+import { withBootstrap } from '@/lib/bootstrap';
 import { updateTrade } from '@/lib/db';
 
 export async function PATCH(_: Request, { params }: { params: { id: string }}) {
@@ -11,4 +12,4 @@ export async function PATCH(_: Request, { params }: { params: { id: string }}) {
   } catch (e: any) {
     return new NextResponse(e.message, { status: 500 });
   }
-}
+  ); }

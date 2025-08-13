@@ -53,3 +53,11 @@ export async function updateTrade(id: number, patch: { status?: string; exitPric
     RETURNING *;`;
   return rows[0];
 }
+
+let _schemaEnsured: boolean | null = null;
+
+export async function ensureSchema() {
+  if (_schemaEnsured) return;
+  await initSchema();
+  _schemaEnsured = true;
+}

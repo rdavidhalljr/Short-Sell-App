@@ -1,5 +1,6 @@
 
 import { NextResponse } from 'next/server';
+import { withBootstrap } from '@/lib/bootstrap';
 import { getModel, saveModel } from '@/lib/db';
 import { defaultParams, sgdUpdate } from '@/lib/ml';
 
@@ -22,4 +23,4 @@ export async function POST(req: Request) {
   } catch (e: any) {
     return new NextResponse(e.message, { status: 500 });
   }
-}
+  ); }

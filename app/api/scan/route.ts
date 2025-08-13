@@ -1,5 +1,6 @@
 
 import { NextResponse } from 'next/server';
+import { withBootstrap } from '@/lib/bootstrap';
 import { fetchAlphaVantageDaily } from '@/lib/data';
 import { rsi, macd, atr, bollinger, slope, sma } from '@/lib/indicators';
 import { getModel, saveModel } from '@/lib/db';
@@ -90,4 +91,4 @@ export async function POST(req: Request) {
   } catch (e: any) {
     return new NextResponse(e.message, { status: 500 });
   }
-}
+  ); }
